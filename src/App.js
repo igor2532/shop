@@ -31,13 +31,13 @@ function App() {
   <div className='leftColumn'>
   <Categories productsDef = {Arr.products} categories={categories} products={products} setProducts={setProducts} />
 <Routes>
-  <Route path="/item/:id" element={
+  <Route  path={`${process.env.PUBLIC_URL}/item/:id`}   element={
 <div>
   <ProductItem btnState={btnState} setIsCount={setIsCount} isCount={isCount} cartproducts={cartproducts} setCartproducts={setCartproducts}  products={products} setProducts={setProducts}  />
   <div className='App_div_back'><NavLink className='btnTourl' to="/">Перейти к продуктам</NavLink></div>
 </div>
   } />
-  <Route path='/'  element={
+  <Route path={`${process.env.PUBLIC_URL}/`}   element={
     <div className='App_items'>
         {
           products.map(
