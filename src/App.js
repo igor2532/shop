@@ -6,6 +6,8 @@ import { useState } from 'react';
 import Arr from './data';
 import Categories from './components/Categories';
 import FormOrder from './components/FormOrder';
+import { BrowserRouter, Link, NavLink, Route,Routes } from 'react-router-dom';
+import ProductItem from './components/ProductItem';
 
 
 
@@ -25,23 +27,41 @@ function App() {
   return (
     <>
 
-
+<BrowserRouter>
   <div className='leftColumn'>
-     <Categories productsDef = {Arr.products} categories={categories} products={products} setProducts={setProducts} />
-
-      <div className='App_items'>
+  <Categories productsDef = {Arr.products} categories={categories} products={products} setProducts={setProducts} />
+<Routes>
+  <Route path="/item/:id" element={
+<div>
+  <ProductItem btnState={btnState} setIsCount={setIsCount} isCount={isCount} cartproducts={cartproducts} setCartproducts={setCartproducts}  products={products} setProducts={setProducts}  />
+  <div className='App_div_back'><NavLink className='btnTourl' to="/">Перейти к продуктам</NavLink></div>
+</div>
+  } />
+  <Route path='/'  element={
+    <div className='App_items'>
         {
           products.map(
             (product, key) => (
-              <Product btnState={btnState} setIsCount={setIsCount} isCount={isCount} cartproducts={cartproducts} key={key} setCartproducts={setCartproducts} product={product} products={products} setProducts={setProducts} />
+          
+            
+            <Product btnState={btnState} setIsCount={setIsCount} isCount={isCount} cartproducts={cartproducts} key={key} setCartproducts={setCartproducts} product={product} products={products} setProducts={setProducts} />
+           
+          
             )
           )
         }
 
       </div>
+  } />
+ </Routes>
+   
+
+ 
+     
+
       </div>
 
-
+      </BrowserRouter>
 
 
 
