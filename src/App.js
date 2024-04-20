@@ -24,7 +24,7 @@ const [cartproducts, setCartproducts] = useState([])
    {
     products.map(
       (product,key)=> (
-<Product cartproducts={cartproducts}  setCartproducts={setCartproducts} product= {product} products={products} setProducts={setProducts} />
+<Product cartproducts={cartproducts} key={key}  setCartproducts={setCartproducts} product= {product} products={products} setProducts={setProducts} />
       )
     )
    }
