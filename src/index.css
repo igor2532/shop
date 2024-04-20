@@ -26,4 +26,12 @@
 span.countClass {
   font-weight: bold;
   color: green;
+  font-size: 20px;
+}
+
+.App_categories {
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: 20px;
+  padding-bottom: 48px;
 }
