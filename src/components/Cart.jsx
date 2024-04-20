@@ -2,15 +2,15 @@ import React from 'react'
 
 export default function Cart({cartproducts, setCartproducts}) {
   return (
-    <div>
+    <div className='Cart_items'>
       {cartproducts.map(
         (product,key)=> (
-            <div>
-            {product.title} Кол-во ({product.count})
+            <div className='Cart_items_item'>
+            {product.title} Кол-во <span className='countValue'> ({product.count})</span>
             </div>
         )
       )}
-      <div><button onClick={()=>setCartproducts([])}>clear</button></div>
+      <div><button className='clearBtn' onClick={()=>setCartproducts([])}>clear</button></div>
     </div>
   )
 }

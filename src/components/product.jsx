@@ -31,8 +31,9 @@ setCartproducts([...newProducts,{...product, count:count}])
 
   return (
     <div key={product.key} className='App_product_item'>
-    <div className='App_img'><img style={{width:'200px'}} src='https://w7.pngwing.com/pngs/526/289/png-transparent-pirozhki-melonpan-croissant-danish-pastry-food-bun-baked-goods-food-danish-pastry.png'/></div>
-    <div className='App_controls'><button disabled={count<2} onClick={MinusToCart} className='decrBtn'>-</button><span>{product.title} </span><span className='countClass'>{count}</span><button 
+    <div className='App_img'><img style={{width:'200px'}} src={product.url}/></div>
+    <div className="itemTitle"><span>{product.title} </span></div>
+    <div className='App_controls'><button disabled={count<2} onClick={MinusToCart} className='decrBtn'>-</button><span className='countClass'>{count}</span><button 
     disabled={count>9}
     onClick={PlusToCart} className='incrBtn'>+</button></div>
 

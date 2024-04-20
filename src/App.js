@@ -3,24 +3,22 @@ import './App.css';
 import Product from './components/product';
 import Cart from './components/Cart';
 import { useState } from 'react';
+import Arr from './data';
 
 
 
 function App() {
 
-const arr = [
-  {id:1, title: 'Пирожок с повидлом',cost: 300,count:0},
-  {id:2, title: 'Пирожок со сгущенкой',cost: 400,count:0},
-  {id:3, title: 'Пирожок с капустой',cost: 500,count:0}
-]
 
-const [products, setProducts] = useState(arr)
+
+const [products, setProducts] = useState(Arr.products)
 
 const [cartproducts, setCartproducts] = useState([])
 
   return (
-    <div className="App">
-      <div> 
+    <>
+   
+      <div className='App_items'> 
    {
     products.map(
       (product,key)=> (
@@ -29,12 +27,19 @@ const [cartproducts, setCartproducts] = useState([])
     )
    }
    
-    </div>
-    <div>
-      <Cart cartproducts ={cartproducts} setCartproducts={setCartproducts}/>
-    </div>
-    </div>
+  </div>
+   
+ 
+
+ 
+ 
   
+ {cartproducts.length>0 && 
+<div className='cart'>  
+  <Cart cartproducts ={cartproducts} setCartproducts={setCartproducts}/>
+</div>
+}
+</>
 
   );
 }
