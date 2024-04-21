@@ -17,6 +17,11 @@ const Arr =
         {id:2, title:'Пирожки'},
         {id:3, title:'Напитки'},
         {id:4, title:'Бургеры'}
+    ],
+    comments: [
+        {id:1, title:'Супер бургер, мне нравится', idProduct:8, user:'Egor', date:'21.04.2024',time:'15:06', likes:0},
+        {id:2, title:'Лучший бургер', idProduct:8, user:'Alex', date:'22.04.2024',time:'15:09', likes:0},
+        {id:3, title:'Острый бургер', idProduct:8, user:'Nick', date:'25.04.2024',time:'19:16', likes:0}
     ]
 
 }

@@ -5,7 +5,6 @@ import {   useParams   } from "react-router-dom";
 
 function ProductItem({btnState,setIsCount,isCount,cartproducts,setCartproducts,products,product, setProducts}) {
     const params = useParams()
-    console.log(params.id)
     const arrProduct = products.filter(item => item.id == params.id);
     const [count, setCount] = useState(0); 
     const {disabled} = btnState;

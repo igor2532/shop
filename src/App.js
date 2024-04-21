@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+
 import Product from './components/product';
 import Cart from './components/Cart';
 import { useState } from 'react';
@@ -8,17 +9,18 @@ import Categories from './components/Categories';
 import FormOrder from './components/FormOrder';
 import { BrowserRouter, Link, NavLink, Route,Routes } from 'react-router-dom';
 import ProductItem from './components/ProductItem';
+import Comments from './components/Comments';
 
 
 
 function App() {
-
-
-  
+  //const devUrl = `${process.env.PUBLIC_URL}`
+  const devUrl = ``
+  const [comments, setComments] = useState(Arr.comments)
   const [products, setProducts] = useState(Arr.products)
   const [categories, setCategories] = useState(Arr.categories)
   const [cartproducts, setCartproducts] = useState([])
-
+  
   const [isCount, setIsCount] = useState(false)
   const [isViewForm, setIsViewForm] = useState(false)
   const [btnState, setBtnState] = useState({
@@ -31,13 +33,14 @@ function App() {
   <div className='leftColumn'>
   <Categories productsDef = {Arr.products} categories={categories} products={products} setProducts={setProducts} />
 <Routes>
-  <Route  path={`${process.env.PUBLIC_URL}/item/:id`}   element={
+  <Route  path={`${devUrl}/item/:id`}   element={
 <div>
   <ProductItem btnState={btnState} setIsCount={setIsCount} isCount={isCount} cartproducts={cartproducts} setCartproducts={setCartproducts}  products={products} setProducts={setProducts}  />
-  <div className='App_div_back'><NavLink className='btnTourl'     to={`${process.env.PUBLIC_URL}/`}>Перейти к продуктам</NavLink></div>
+  <div className='App_div_back'><NavLink className='btnTourl'     to={`${devUrl}/`}>Перейти к продуктам</NavLink></div>
+  <Comments comments={comments} setComments={setComments}  />
 </div>
   } />
-  <Route path={`${process.env.PUBLIC_URL}/`}   element={
+  <Route path={`${devUrl}/`}   element={
     <div className='App_items'>
         {
           products.map(

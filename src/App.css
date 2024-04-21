@@ -177,3 +177,61 @@ a.btnTourl {
   color: #1a1a1a;
   text-decoration: none;
 }
+
+
+.App_comments {
+  text-align: center;
+  padding-top: 70px;
+}
+
+.App_comments_title {
+  font-size: 24px;
+  padding-bottom: 22px;
+  margin: 0 auto;
+}
+
+.App_comments_title span {
+  border-bottom: solid 1px black;
+  padding-bottom: 6px;
+}
+
+.App_comments_items_item {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.App_comments_items_item {
+  width: 300px;
+  margin: 0 auto;
+}
+.App_comments_items_block_up {
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 8px;
+}
+
+.App_comments_items_item {
+  width: 300px;
+  margin: 0 auto;
+  border: solid 1px #bddef5;
+  margin-bottom: 18px;
+}
+
+.App_comments_items_item_author {
+  font-weight: bold;
+  color: red;
+}
+
+.App_comments_items_item_likes i {
+  font-size: 16px;
+  position: relative;
+  top: 3px;
+}
+
+.App_comments_items_item_likes button {
+  background: none;
+  border: none;
+}
+.App_comments_empty {
+  padding-bottom: 20px;
+}
