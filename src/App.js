@@ -14,8 +14,8 @@ import Comments from './components/Comments';
 
 
 function App() {
-  //const devUrl = `${process.env.PUBLIC_URL}`
-  const devUrl = ``
+  const devUrl = `${process.env.PUBLIC_URL}`
+  // const devUrl = ``
   const [comments, setComments] = useState(Arr.comments)
   const [products, setProducts] = useState(Arr.products)
   const [categories, setCategories] = useState(Arr.categories)
