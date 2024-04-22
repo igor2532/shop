@@ -11,7 +11,7 @@ function Categories() {
   }));
   return (
     <div className="App_categories">
-      <NavLink to={"/"}>
+      <NavLink to="/">
         <button
           onClick={() => setProducts(newProducts)}
           className="btnCategory"
@@ -21,8 +21,8 @@ function Categories() {
       </NavLink>
       {categories.map((item, key) => (
         <div key={key}>
-          <NavLink to={"/"}>
-            {" "}
+          <NavLink to="/">
+          
             <button
               onClick={() =>
                 setProducts(
