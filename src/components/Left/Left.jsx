@@ -14,6 +14,7 @@ export default function Left() {
       <Categories />
       <Routes>
         <Route
+       
           path={`${devUrl}/item/:id`}
           element={
             <div>
@@ -28,7 +29,7 @@ export default function Left() {
           }
         />
         <Route path={`${devUrl}/`} element={<Products />} />
-        <Route path={`${devUrl}/order`} element={<OrderForm />} />
+        <Route path={`${devUrl}/order`} element={<OrderForm />}   />
       </Routes>
     </div>
   );

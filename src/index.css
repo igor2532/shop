@@ -297,3 +297,8 @@ span.App_order_title {
   padding-bottom: 2px;
   font-weight: bold;
 }
+.App_item_error {
+  text-align: center;
+  font-size: 38px;
+  font-weight: bold;
+}

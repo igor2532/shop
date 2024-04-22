@@ -41,8 +41,11 @@ function ProductItem() {
      }
 
    return (
-       arrProduct.map((item,key)=>(
-        <>
+
+    <>
+        {   arrProduct.length>0 &&
+      arrProduct.map((item,key)=>(
+       
         <div className='App_item'>
           <div></div>
         
@@ -55,9 +58,14 @@ function ProductItem() {
     onClick={()=>PlusToCart(item.title,item.cost)} className='incrBtn'>+</button></div>
 
            </div>
-        </>
+       
        ))
-   )
+      }
+        {arrProduct.length==0 &&
+      
+        <div className='App_item_error'>Error 404</div>}
+       </>
+       )
 
 
 }

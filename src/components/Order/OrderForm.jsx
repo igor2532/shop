@@ -1,6 +1,8 @@
 import React from "react";
 
 export default function OrderForm() {
+  
+  document.title = 'Форма заказа'
   return (
     <>
       <div className="App_order_form">
