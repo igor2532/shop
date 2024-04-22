@@ -1,31 +1,33 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { NavLink } from 'react-router-dom';
+import ProductContext from '../Context/ProductContext';
 
-export default function Product({btnState,setIsCount,isCount,cartproducts,key,setCartproducts,products,product, setProducts}) {
+export default function Product({product}) {
 
-   const [count, setCount] = useState(0); 
+  //  const [count, setCount] = useState(0); 
+  const {btnState,setIsCount,isCount,cartproducts,setCartproducts,products,setProducts} = useContext(ProductContext)
+
 const {disabled} = btnState;
+const allProducts = cartproducts.filter((item,itemKey) => item.id !== product.id);
+
 const PlusToCart = () => {
-  setCount(count+1)
+  product.count++;
+  setCartproducts([...allProducts,{...product,count:product.count}])
 
-
+  
 }
 const MinusToCart = () => {
-  setCount(count-1)
-  
- }
+  product.count--;
+  setCartproducts([...allProducts,{...product,count:product.count}])
 
+  }
 
 useEffect(()=> {
- const newProducts = cartproducts.filter(item => item.id !== product.id);
-//  newProducts.push({...product, count:count})
-// cartproducts.filter(item => item.id !== product.id);
-if(count!==0) {
-setIsCount(true)
-setCartproducts([...newProducts,{...product, count:count}])
+if(product.count!==0) {
+ setIsCount(true)
 }
 }
-,[count])
+,[product.count])
 
 
 
@@ -35,8 +37,8 @@ setCartproducts([...newProducts,{...product, count:count}])
     <div  key={product.key} className='App_product_item'>
     <div className='App_img'> <NavLink to={`item/${product.id}`}><img style={{width:'200px'}} src={product.url}/></NavLink> </div>
     <div className="itemTitle"><NavLink to={`item/${product.id}`}><span>{product.title} </span></NavLink></div>
-    <div className='App_controls'><button disabled={!isCount!==false?!disabled:count<2} onClick={MinusToCart} className='decrBtn'>-</button><span className='countClass'>{ isCount!==true?0:count }</span><button 
-    disabled={!isCount!==false?disabled:count>9}
+    <div className='App_controls'><button disabled={!isCount!==false?!disabled:product.count<2} onClick={MinusToCart} className='decrBtn'>-</button><span className='countClass'>{ isCount!==true?0:product.count }</span><button 
+    disabled={!isCount!==false?disabled:product.count>9}
     onClick={PlusToCart} className='incrBtn'>+</button></div>
 
  

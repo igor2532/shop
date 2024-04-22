@@ -1,18 +1,17 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import ProductContext from '../../Context/ProductContext'
 
-export default function Cart({isViewForm,setIsViewForm,setIsCount,cartproducts, setCartproducts}) {
 
+export default function Cart() {
 
+const {isViewForm,setIsViewForm,setIsCount,cartproducts, setCartproducts,products,setProducts,productsDef} = useContext(ProductContext)
 const clearProducts = () => {
-  cartproducts.map((item,itemKey)=>
-  (
-    {...item,count:0}
-  )
-  )
+  cartproducts.map((item,itemKey)=>({...item,count:0}))
+  const newProducts = productsDef.map((item,itemKey)=>({...item,count:0}))
+  setProducts([...newProducts])
   setCartproducts([])
   setIsCount(false)
-  
-}
+ }
 
   return (
     <div className='Cart_items'>

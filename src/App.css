@@ -1,9 +1,4 @@
-.App_items {
-  display: grid;
-  grid-template-columns: 20% 20% 20% 20%;
-  grid-gap: 20px;
-  justify-content: center;
-}
+
 
 .App {
   display: block;

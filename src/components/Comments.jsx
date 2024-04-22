@@ -1,7 +1,9 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { useParams } from 'react-router-dom';
+import ProductContext from '../Context/ProductContext';
 
-function Comments({ comments,setComments }) {
+function Comments() {
+    const {comments,setComments} = useContext(ProductContext)
     const [textValue, setTextValue] = useState('');
     const [nameValue, setNameValue] = useState('');
     const params = useParams()

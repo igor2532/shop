@@ -35,3 +35,34 @@ span.countClass {
   padding-top: 20px;
   padding-bottom: 48px;
 }
+
+
+@media all and (min-width:1300px){
+  .App_items {
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20%;
+    grid-gap: 20px;
+    justify-content: center;
+  }}
+
+
+@media all and (max-width:1299px){
+  .App_items {
+    /* display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: wrap; */
+    display: grid;
+    grid-template-columns: 25% 25%;
+    grid-gap: 20px;
+    justify-content: center;
+}
+}
+
+@media all and (max-width:999px){
+  .App_items {
+  display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+    grid-gap: 20px;
+}
+}

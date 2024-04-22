@@ -10,6 +10,16 @@ const Arr =
     {id:6, title: 'Coca cola 1.5л',cost: 500,count:0,cat:3,url: 'https://img09.rl0.ru/afisha/e1200x800i/daily.afisha.ru/uploads/images/7/60/7602007c2aabe4b0ff43895a46dc7189.jpg'},
     {id:7, title: 'Fanta 1.5л',cost: 500,count:0,cat:3,url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQP1JdBUlKA33VEgIXNR8mMdX9Ac32Ad7Q5Bw_jJxxXiw&s'},
     {id:8, title: 'Бургер Джуниор 100г',cost: 500,count:0,cat:4,url: 'https://meat-expert.ru/content_uploads/2021/03/ispanski_1614596401.8001_main_image.jpeg'},
+    {id:9, title: 'Пирожок с грибами',cost: 500,count:0,cat:2,url: 'https://img1.russianfood.com/dycontent/images_upl/542/big_541159.jpg'},
+    {id:10, title: 'Пирожок с ливером',cost: 500,count:0,cat:2,url: 'https://img1.russianfood.com/dycontent/images_upl/542/big_541159.jpg'},
+    {id:11, title: 'Пирожок с яйцами',cost: 500,count:0,cat:2,url: 'https://img1.russianfood.com/dycontent/images_upl/542/big_541159.jpg'},
+    {id:12, title: 'Бонаква 1л',cost: 500,count:0,cat:3,url: 'https://www.coca-cola.com/content/dam/onexp/by/be/brands/bonaqua/by_bon-aqua_prod_17_750x750_v1.jpg'},
+    {id:13, title: 'Пиво лидское 0.5л',cost: 500,count:0,cat:3,url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3UQ4nyrNlF4Id1JsoV840NbWp8DKxKOdgKwZ1O6uGnQ&s'},
+    {id:14, title: 'Пиво безалкогольное',cost: 500,count:0,cat:3,url: 'https://avatars.dzeninfra.ru/get-zen_doc/3979494/pub_60a140f9cd17c611d43d4a33_60a143d68bcfa40dc3bc68b4/scale_1200'},
+    {id:15, title: 'Квас лидский 0.5л',cost: 500,count:0,cat:3,url: 'https://cdn1.ozone.ru/s3/multimedia-u/6064635978.jpg'},
+    {id:16, title: 'Чебурек с ливером',cost: 500,count:0,cat:1,url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUMhmSiYEdBqS1FwZtkpxOiISHWVegTjQCevMU6iTWYw&s'},
+    {id:17, title: 'Чебурек с курицей и сыром',cost: 500,count:0,cat:1,url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUMhmSiYEdBqS1FwZtkpxOiISHWVegTjQCevMU6iTWYw&s'},
+    {id:18, title: 'Чебурек с ветчиной и сыром',cost: 500,count:0,cat:1,url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUMhmSiYEdBqS1FwZtkpxOiISHWVegTjQCevMU6iTWYw&s'},
 ]
     ,
     categories: [
