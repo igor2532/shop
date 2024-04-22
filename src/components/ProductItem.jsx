@@ -49,15 +49,22 @@ function ProductItem() {
         arrProduct.map((item, key) => (
 
           <div className='App_item'>
-            <div></div>
+            
 
+
+            <div className='App_item_left'>
             <div className='App_item_img'><img src={item.url} /></div>
+            </div>
+
+
+       <div className="App_item_right">
             <div className='App_item_like'> <button onClick={() => addLike(item)}><i class="material-icons">favorite</i> </button><span>{singleLikes.length > 0 ? singleLikes.length : ''}</span></div>
             <div className='App_item_title'><span> {item.title}</span></div>
             <div className='App_item_cost'><span className='costPrefix'>Цена:  </span>  <span className='costValue'>{item.cost} BYN </span></div>
             <div className='App_controls'><button disabled={!isCount !== false ? !disabled : countValue < 2} onClick={() => MinusToCart(item.title, item.cost)} className='decrBtn'>-</button><span className='countClass'>{isCount !== true ? 0 : countValue}</span><button
               disabled={!isCount !== false ? disabled : countValue > 9}
               onClick={() => PlusToCart(item.title, item.cost)} className='incrBtn'>+</button></div>
+       </div>
 
           </div>
 

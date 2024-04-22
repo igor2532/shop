@@ -43,6 +43,9 @@ function CartFull() {
       };
     return (
    <div className='App_cart_full'>
+    <div className='App_cart_full_title'>
+        <h1>Корзина</h1>
+    </div>
    <div className="App_cart_full_items">
       {cartproducts.map((product, key) => (
         <div className="App_cart_full_items_item">

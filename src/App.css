@@ -19,7 +19,7 @@
   border: solid 1px #c1f3c0;
   width: 200px;
   margin: 0 auto;
-  height: 60px;
+  height: 25px;
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
@@ -130,7 +130,7 @@ button.btnCategory {
   padding-top: 5px;
   padding-bottom: 5px;
   width: 150px;
-  background: white;
+  background: #ffffffb5;
   border: solid 1px black;
   border-radius: 9px;
 }
@@ -302,7 +302,7 @@ i.material-icons {
 
 .App_search {
   text-align: center;
-  padding-top: 10px;
-  padding-bottom: 40px;
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 

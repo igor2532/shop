@@ -1,3 +1,4 @@
+body{margin: 0;}
 .App_controls {
   display: block;
   justify-content: center;
@@ -10,14 +11,22 @@
   padding-left: 10px;
   padding-right: 10px;
 }
-
+.App_categories {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
 .App {
   display: grid;
   grid-template-columns:33% 33% 33%;
   grid-gap: 18px;
   margin: 0 auto;
 }
-
+.App_categories {
+  background-image: url(https://img.freepik.com/premium-photo/food-background-set-dishes-fish-meat-vegetables-black-stone-background-top-view-free-copy-space_187166-20643.jpg);
+  background-size: cover;
+  background-blend-mode: multiply;
+  background-color: #00000091;
+}
 .App {
   text-align: center;
   max-width: 1000px;
@@ -51,9 +60,8 @@ span.countClass {
   }
   div#root {
     display: block;
-    
     margin: 0 auto;
-    padding-top: 30px;
+   
   }
 
   .App_items {
@@ -66,8 +74,7 @@ span.countClass {
   .App_categories {
     display: flex;
     justify-content: space-evenly;
-    padding-top: 20px;
-    padding-bottom: 48px;
+
   }
 
   .App_order_form_btn button {
@@ -397,7 +404,7 @@ span.App_order_title {
 }
 .App_cart_full_clear {
   text-align: center;
-  padding-bottom: 20px;
+  padding-bottom: 40px;
   padding-top: 10px;
 }
 
@@ -424,4 +431,41 @@ span.App_order_title {
   font-weight: bold;
   padding-top: 20px;
   padding-bottom: 40px;
+}
+
+.App_order_form {
+  background-image: url(https://img.goodfon.ru/original/2400x1599/b/eb/pirozhki-vypechka-domashnie.jpg);
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background-size: cover;
+}
+
+span.App_order_title {
+  color: white;
+  font-size: 31px;
+}
+
+
+.App_item {
+  display: flex;
+  gap: 100px;
+  justify-content: center;
+}
+
+.Cart_items {
+  max-height: 500px;
+  overflow-y: scroll;
+}
+.App_cart_full_items {
+  padding-top: 20px;
+}
+.cartEmpty {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  background: white;
+  font-weight: bold;
+}.App_cart_full_title {
+  text-align: center;
+  padding-top: 10px;
 }
