@@ -13,6 +13,7 @@ export default function Cart() {
     products,
     setProducts,
     productsDef,
+    devUrl
   } = useContext(ProductContext);
   const clearProducts = () => {
     cartproducts.map((item, itemKey) => ({ ...item, count: 0 }));
@@ -23,7 +24,7 @@ export default function Cart() {
     setProducts([...newProducts]);
     setCartproducts([]);
     setIsCount(false);
-    navigate("/");
+    navigate(`${devUrl}/`);
   };
 
   const deleteItemInCart = (id) => {
