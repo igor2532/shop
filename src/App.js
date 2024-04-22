@@ -2,7 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import { useState } from 'react';
 import Arr from './data';
-import { BrowserRouter, Link, NavLink, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Link, NavLink, Route, Routes, useNavigate } from 'react-router-dom';
 import ProductContext from './Context/ProductContext';
 import Right from './components/Right/Right';
 import Left from './components/Left/Left';
@@ -10,6 +10,7 @@ import ReactPaginate from 'react-paginate';
 
 
 function App() {
+  // const navigate = useNavigate()
   const devUrl = `${process.env.PUBLIC_URL}`
   // const devUrl = ``
   const [likes, setLikes] = useState(Arr.likes)
@@ -19,9 +20,13 @@ function App() {
   const [cartproducts, setCartproducts] = useState([])
   const [isCount, setIsCount] = useState(false)
   const [isViewForm, setIsViewForm] = useState(false)
+  const [isHideCart, setIsHideCart] = useState(true)
+  const [sumCost, setSumCos] = useState(0);
   const [btnState, setBtnState] = useState({
     disabled: false
   })
+  
+  
 
   const ProductsObjectContext = {
     //for Categories
@@ -36,7 +41,9 @@ function App() {
     devUrl: devUrl,
     //for other
     likes: likes, setLikes: setLikes,
-
+    isHideCart:isHideCart, setIsHideCart:setIsHideCart,
+    //for carts
+    sumCost:sumCost, setSumCos:setSumCos
   }
 
 

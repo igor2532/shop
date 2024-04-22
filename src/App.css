@@ -6,7 +6,10 @@
  
 }
 .Cart_items {
-  padding: 30px;
+  padding-top: 10px;
+  padding-left: 30px;
+  padding-bottom: 30px;
+  padding-right: 30px;
   border: solid 1px #c1f3c0;
  
 }
@@ -43,21 +46,34 @@ form.App_form {
 span.countValue {
   font-weight: bold;
 }
+.Cart_items_close {
+  padding-bottom: 10px;
+  display: flex;
+  justify-content: flex-end;
+}
 .App_product_item {
   text-align: center;
   padding-top: 5px;
   padding-bottom: 20px;
   box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
-
+.Cart_items_close button {
+  background: none;
+  color: black;
+  font-weight: bold;
+  font-size: 18px;
+  width: 25px;
+  height: 25px;
+  border: solid 1px black;
+}
 .Cart_items_item {
   padding-top: 5px;
   padding-bottom: 5px;
 }
 button.clearBtn{
-  font-size: 20px;
-  margin-top: 20px;
-  padding-top: 5px;
+  font-size: 14px;
+  margin-right: 10px;
+ padding-top: 5px;
   padding-bottom: 5px;
 
   background: white;
@@ -65,7 +81,7 @@ button.clearBtn{
   border-radius: 9px;
 }
 button.orderBtn,a.orderBtn{
-  font-size: 20px;
+  font-size: 14px;
   margin-top: 20px;
   padding-top: 5px;
   padding-bottom: 5px;
@@ -79,19 +95,20 @@ button.orderBtn,a.orderBtn{
 }
 
 
-.App_cart_order {
-  padding-top: 22px;
+
+.App_cart_mini_buttons {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  align-content: space-between;
 }
-
-
-
 
 
 .cart {
   padding-top: 20px;
  
   text-align: center;
-  padding-bottom: 30px;
+
  
   margin: 0 auto;
 }

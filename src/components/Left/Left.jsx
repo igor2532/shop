@@ -7,6 +7,8 @@ import Products from "../Products";
 import ProductContext from "../../Context/ProductContext";
 import OrderForm from "../Order/OrderForm";
 
+import CartFull from "../Cart/CartFull";
+
 export default function Left() {
   const { devUrl } = useContext(ProductContext);
   return (
@@ -14,7 +16,6 @@ export default function Left() {
       <Categories />
       <Routes>
         <Route
-       
           path={`${devUrl}/item/:id`}
           element={
             <div>
@@ -29,7 +30,12 @@ export default function Left() {
           }
         />
         <Route path={`${devUrl}/`} element={<Products />} />
-        <Route path={`${devUrl}/order`} element={<OrderForm />}   />
+        <Route path={`${devUrl}/order`} element={
+          <div>
+            <CartFull />
+            <OrderForm />
+          </div>
+        } />
       </Routes>
     </div>
   );

@@ -1,10 +1,10 @@
 import React, { useContext } from "react";
-import Cart from "../Cart/Cart";
+import CartMini from "../Cart/CartMini";
 import FormOrder from "../FormOrder";
 import ProductContext from "../../Context/ProductContext";
 
 export default function Right() {
-  const { cartproducts, isViewForm } = useContext(ProductContext);
+  const { cartproducts, isViewForm, isHideCart,setIsHideCart,sumCost } = useContext(ProductContext);
   return (
     <div className="rightColumn">
       {cartproducts.length === 0 && (
@@ -12,10 +12,16 @@ export default function Right() {
           <span>Корзина пуста</span>
         </div>
       )}
-      {cartproducts.length > 0 && (
+      {cartproducts.length > 0 && !isHideCart  && (
         <div className="cart">
-          <Cart />
+          <CartMini />
         </div>
+      )}
+
+    {cartproducts.length > 0 && isHideCart && (
+        <div className="cart hidecart">
+       <div> <button onClick={()=>setIsHideCart(!isHideCart)}>{cartproducts.length} товара(ов) на сумму {sumCost} BYN</button>
+        </div> </div>
       )}
 
       {cartproducts.length > 0 && isViewForm === true && <FormOrder />}

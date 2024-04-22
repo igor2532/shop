@@ -2,8 +2,8 @@ import React, { useContext } from "react";
 import ProductContext from "../../Context/ProductContext";
 import { NavLink, useNavigate } from "react-router-dom";
 
-export default function Cart() {
-  const navigate = useNavigate();
+export default function CartMini() {
+ 
   const {
     isViewForm,
     setIsViewForm,
@@ -13,10 +13,26 @@ export default function Cart() {
     products,
     setProducts,
     productsDef,
-    devUrl
+    devUrl,
+    setIsHideCart,
+    isHideCart,
+    sumCost,
+    setSumCos
+    
+   
   } = useContext(ProductContext);
+  
+const navigate = useNavigate()
+  const deleteItemInCart = (product) => {
+    setSumCos(sumCost-(product.count*product.cost))
+    const allProducts = cartproducts.filter((item, itemKey) => item.id !== product.id);
+    setCartproducts([...allProducts]);
+    if (allProducts.length == 0) {
+      clearProducts();
+    }
+  };
   const clearProducts = () => {
-    cartproducts.map((item, itemKey) => ({ ...item, count: 0 }));
+    setSumCos(0)
     const newProducts = productsDef.map((item, itemKey) => ({
       ...item,
       count: 0,
@@ -26,23 +42,16 @@ export default function Cart() {
     setIsCount(false);
     navigate(`${devUrl}/`);
   };
-
-  const deleteItemInCart = (id) => {
-    const allProducts = cartproducts.filter((item, itemKey) => item.id !== id);
-    setCartproducts([...allProducts]);
-    if (allProducts.length == 0) {
-      clearProducts();
-    }
-  };
-
   return (
     <div className="Cart_items">
+      <div className="Cart_items_close"><button onClick={()=>setIsHideCart(!isHideCart)}>x</button></div>
       {cartproducts.map((product, key) => (
         <div className="Cart_items_item">
           <div>
             <div>
               {" "}
-              <NavLink to={`item/${product.id}`}> {product.title}</NavLink>{" "}
+          
+              <NavLink to={`${devUrl}/item/${product.id}`}> {product.title}</NavLink>{" "}
             </div>
             <div>
               Сумма:{" "}
@@ -56,24 +65,30 @@ export default function Cart() {
           <div>
             <button
               className="btnDeleteItemInCart"
-              onClick={() => deleteItemInCart(product.id)}
+              onClick={() => deleteItemInCart(product)}
             >
               x
             </button>
           </div>
         </div>
       ))}
+      <div className="App_cart_mini_results">
+       Итого: {sumCost} BYN
+      </div>
+    <div className="App_cart_mini_buttons">
       <div>
         <button className="clearBtn" onClick={clearProducts}>
           Очистить корзину
         </button>
       </div>
-      {/* <div><button className='orderBtn' onClick={()=>setIsViewForm(!isViewForm)}>Открыть форму заказа</button></div> */}
-      <div className="App_cart_order">
-        <NavLink className="orderBtn" to="/order">
+        <div className="App_cart_order">
+        <NavLink className="orderBtn" to={`${devUrl}/order`}>
           Открыть форму заказа
         </NavLink>
       </div>
+      </div>
+
+
     </div>
   );
 }
