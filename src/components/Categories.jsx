@@ -9,7 +9,7 @@ const newProducts = productsDef.map((item,itemKey)=>({...item,count:0}))
              <button onClick={()=>setProducts(newProducts)} className='btnCategory' >Вся продукция</button>
         {categories.map((item,key)=>(
           <div key={key}>
-            <button onClick={()=>setProducts(newProducts.filter(product => product.cat === item.id))} className='btnCategory' >{item.title}</button>
+            <button  onClick={()=>setProducts(newProducts.filter(product => product.cat === item.id))} className='btnCategory' >{item.title}</button>
             </div>
         ))}
       </div>

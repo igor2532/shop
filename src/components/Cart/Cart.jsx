@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import ProductContext from '../../Context/ProductContext'
+import { NavLink } from 'react-router-dom'
 
 
 export default function Cart() {
@@ -15,11 +16,17 @@ const clearProducts = () => {
 
 const deleteItemInCart = (id) => {
 
+  
   const allProducts = cartproducts.filter((item,itemKey) => item.id !== id);
 
-  
+ 
     setCartproducts([...allProducts])
+   if(allProducts.length==0) {
+    clearProducts()
+   }
+   
 
+  
 
 }
 
@@ -30,7 +37,7 @@ const deleteItemInCart = (id) => {
             <div className='Cart_items_item'>
         
           <div>
-          <div>  {product.title} </div>
+          <div> <NavLink to={`item/${product.id}`}> {product.title}</NavLink>  </div>
           <div>
            Сумма: <span className='summValue'> ({product.count*product.cost}) BYN</span>   Кол-во <span className='countValue'> ({product.count})</span>
             </div>

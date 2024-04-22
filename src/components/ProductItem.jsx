@@ -6,13 +6,15 @@ import ProductContext from '../Context/ProductContext';
 
 function ProductItem() {
     const params = useParams()
-    const {btnState,setIsCount,isCount,cartproducts,setCartproducts,products,product, setProducts} = useContext(ProductContext)
+    const {btnState,setIsCount,isCount,cartproducts,setCartproducts,products,product, setProducts,likes, setLikes} = useContext(ProductContext)
     const arrProduct = products.filter((item,itemKey) => item.id == params.id);
+    const singleLikes = likes.filter((item,itemKey) => item.idProduct == params.id);
+    const arrProductAll = products.filter((item,itemKey) => item.id != params.id);
    const [countValue, setCount] = useState(0); 
     const {disabled} = btnState;
     const viewProduct = cartproducts.filter((item,itemKey) => item.id == params.id);
     const allProducts = cartproducts.filter((item,itemKey) => item.id !== params.id);
- 
+   const [countLikes,setCountsLikes] = useState(0)
     const PlusToCart = (title,cost) => {
       setCount(countValue+1);
      
@@ -30,11 +32,22 @@ function ProductItem() {
       
       }
       ,[])
+
+     const addLike = (item) => {
+      
+    setCountsLikes(singleLikes.length+1);
+     setLikes([...likes,{id:likes.length+1,idProduct:params.id}])
+      
+     }
+
    return (
        arrProduct.map((item,key)=>(
         <>
         <div className='App_item'>
+          <div></div>
+        
         <div className='App_item_img'><img src={item.url}/></div>
+        <div className='App_item_like'> <button onClick={()=>addLike(item)}><i class="material-icons">favorite</i> </button><span>{singleLikes.length>0?singleLikes.length:''}</span></div> 
           <div className='App_item_title'><span> {item.title}</span></div>  
          <div className='App_item_cost'><span className='costPrefix'>Цена:  </span>  <span className='costValue'>{item.cost} BYN </span></div>
          <div className='App_controls'><button disabled={!isCount!==false?!disabled:countValue<2} onClick={()=>MinusToCart(item.title,item.cost)} className='decrBtn'>-</button><span className='countClass'>{ isCount!==true?0:countValue }</span><button 

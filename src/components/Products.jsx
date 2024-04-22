@@ -5,9 +5,21 @@ import ReactPaginate from 'react-paginate'
 
 export default function Products() {
 
-    const {products} = useContext(ProductContext)
+    const {products,setProducts,productsDef} = useContext(ProductContext)
+    const [inputValue, setInputValue] = useState('')
+    const searchProductForInput = (e) => {
+        setInputValue(e.target.value)
+        const newArr =  productsDef.filter(item => item.title.toUpperCase().includes(inputValue.toUpperCase()));
+        setProducts([...newArr])
+    }
   return (
+
+    <>
+    <div className='App_search'>
+       <input defaultValue={''} onChange={(e)=>searchProductForInput(e)} placeholder='Введите название товара' />
+    </div>
  <PaginatedItems itemsPerPage={12} products={products} />   
+ </>
   )
 }
 

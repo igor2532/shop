@@ -13,6 +13,7 @@ import ReactPaginate from 'react-paginate';
 function App() {
   const devUrl = `${process.env.PUBLIC_URL}`
   // const devUrl = ``
+  const[likes, setLikes] = useState(Arr.likes)
   const [comments, setComments] = useState(Arr.comments)
   const [products, setProducts] = useState(Arr.products)
   const [categories, setCategories] = useState(Arr.categories)
@@ -33,7 +34,9 @@ function App() {
     //for Cart
     ,isViewForm:isViewForm, setIsViewForm:setIsViewForm, 
     //for Left
-    devUrl:devUrl
+    devUrl:devUrl,
+    //for other
+    likes:likes, setLikes:setLikes
    }
 
   
@@ -44,8 +47,9 @@ function App() {
 <ProductContext.Provider value={ProductsObjectContext}>
 <BrowserRouter>
 <Left />
- </BrowserRouter>
+
 <Right />
+</BrowserRouter>
 </ProductContext.Provider>
  </>
 
