@@ -37,6 +37,7 @@ if(product.count!==0) {
     <div  key={product.key} className='App_product_item'>
     <div className='App_img'> <NavLink to={`item/${product.id}`}><img style={{width:'200px'}} src={product.url}/></NavLink> </div>
     <div className="itemTitle"><NavLink to={`item/${product.id}`}><span>{product.title} </span></NavLink></div>
+    <div className="App_item_cost"><span className='App_item_cost_span_prefix'>Цена: </span> <span className='App_item_cost_span_costvalue'> {product.cost} BYN</span> </div>
     <div className='App_controls'><button disabled={!isCount!==false?!disabled:product.count<2} onClick={MinusToCart} className='decrBtn'>-</button><span className='countClass'>{ isCount!==true?0:product.count }</span><button 
     disabled={!isCount!==false?disabled:product.count>9}
     onClick={PlusToCart} className='incrBtn'>+</button></div>

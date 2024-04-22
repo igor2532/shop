@@ -13,12 +13,30 @@ const clearProducts = () => {
   setIsCount(false)
  }
 
+const deleteItemInCart = (id) => {
+
+  const allProducts = cartproducts.filter((item,itemKey) => item.id !== id);
+
+  
+    setCartproducts([...allProducts])
+
+
+}
+
   return (
     <div className='Cart_items'>
       {cartproducts.map(
         (product,key)=> (
             <div className='Cart_items_item'>
-            {product.title} Кол-во <span className='countValue'> ({product.count})</span>
+        
+          <div>
+          <div>  {product.title} </div>
+          <div>
+           Сумма: <span className='summValue'> ({product.count*product.cost}) BYN</span>   Кол-во <span className='countValue'> ({product.count})</span>
+            </div>
+          </div>
+          <div><button className='btnDeleteItemInCart' onClick={()=>deleteItemInCart(product.id)}>x</button></div>
+          
             </div>
         )
       )}

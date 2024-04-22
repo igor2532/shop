@@ -66,3 +66,31 @@ span.countClass {
     grid-gap: 20px;
 }
 }
+
+.Cart_items_item {
+  border: solid 1px;
+  margin-bottom: 15px;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+span.summValue {
+  color: red;
+  font-weight: bold;
+}
+
+.Cart_items_item {
+  display: flex;
+  align-content: stretch;
+  justify-content: space-around;
+  align-items: center;
+}
+
+button.btnDeleteItemInCart {
+  background: none;
+  border: solid 1px black;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  background: red;
+}

@@ -230,3 +230,26 @@ a.btnTourl {
 .App_comments_empty {
   padding-bottom: 20px;
 }
+
+
+ul.pagination_ul {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+}
+ul.pagination_ul {
+  width: fit-content;
+  margin: 0 auto;
+  padding-top: 50px;
+}
+
+ul.pagination_ul li {
+  padding-left: 11px;
+}
+
+ul.pagination_ul li a {
+  color: black;
+  cursor: grabbing;
+  font-weight: bold;
+  font-size: 21px;
+}

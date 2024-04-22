@@ -6,6 +6,7 @@ import { BrowserRouter, Link, NavLink, Route,Routes } from 'react-router-dom';
 import ProductContext from './Context/ProductContext';
 import Right from './components/Right/Right';
 import Left from './components/Left/Left';
+import ReactPaginate from 'react-paginate';
 
 
 

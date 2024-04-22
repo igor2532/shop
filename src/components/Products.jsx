@@ -1,22 +1,63 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import ProductContext from '../Context/ProductContext'
 import Product from './product'
+import ReactPaginate from 'react-paginate'
 
 export default function Products() {
 
     const {products} = useContext(ProductContext)
   return (
-    <div className='App_items'>
-    {
-      products.map(
-        (product, key) => (
-        
-        <Product  key={key} product={product} />
-      
-        )
-      )
-    }
-
-  </div>
+ <PaginatedItems itemsPerPage={12} products={products} />   
   )
 }
+
+function Items({ currentItems }) {
+    return (
+      <>
+        {currentItems &&
+          currentItems.map((product,key) => (
+            <Product  key={key} product={product} />
+          ))}
+      </>
+    );
+  }
+
+
+function PaginatedItems({ itemsPerPage,products }) {
+ 
+    const [itemOffset, setItemOffset] = useState(0);
+    const endOffset = itemOffset + itemsPerPage;
+    console.log(`Loading items from ${itemOffset} to ${endOffset}`);
+    const currentItems = products.slice(itemOffset, endOffset);
+    const pageCount = Math.ceil(products.length / itemsPerPage);
+  
+    const handlePageClick = (event) => {
+      const newOffset = (event.selected * itemsPerPage) % products.length;
+      console.log(
+        `User requested page number ${event.selected}, which is offset ${newOffset}`
+      );
+      setItemOffset(newOffset);
+    };
+  
+    return (
+     <>
+      <div className='App_items'>
+        <Items currentItems={currentItems} />
+        </div>
+      <div className='App_paginate'><ReactPaginate
+          breakLabel="..."
+          className='pagination_ul'
+          nextLabel=">"
+          onPageChange={handlePageClick}
+          pageRangeDisplayed={5}
+          pageCount={pageCount}
+          previousLabel="<"
+          renderOnZeroPageCount={null}/></div>   
+        </>
+     
+    );
+  }
+
+
+
+
