@@ -31,7 +31,12 @@ const Arr =
     comments: [
         {id:1, title:'Супер бургер, мне нравится', idProduct:8, user:'Egor', date:'21.04.2024',time:'15:06', likes:0},
         {id:2, title:'Лучший бургер', idProduct:8, user:'Alex', date:'22.04.2024',time:'15:09', likes:0},
-        {id:3, title:'Острый бургер', idProduct:8, user:'Nick', date:'25.04.2024',time:'19:16', likes:0}
+        {id:3, title:'Острый бургер', idProduct:8, user:'Nick', date:'25.04.2024',time:'19:16', likes:0},
+        {id:4, title:'Неприятный пирожок', idProduct:8, user:'Иван', date:'25.04.2024',time:'19:16', likes:0},
+        {id:5, title:'Сочный бургер', idProduct:8, user:'Петр', date:'25.04.2024',time:'19:16', likes:0},
+        {id:6, title:'Освежающая кола', idProduct:8, user:'Елена', date:'25.04.2024',time:'19:16', likes:0},
+        {id:7, title:'Потрясно вообще', idProduct:8, user:'Катя', date:'25.04.2024',time:'19:16', likes:0},
+        {id:8, title:'Лучшая доставка', idProduct:8, user:'Дмитрий', date:'25.04.2024',time:'19:16', likes:0},
     ],
     likes:[
         {id:1, idProduct:1},

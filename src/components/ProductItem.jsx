@@ -27,7 +27,7 @@ function ProductItem() {
     setCartproducts([...allProducts,{title:title,count:countValue-1,cost:cost, id:params.id}])
      }
      useEffect(()=> {
-    
+      document.title = "Название продукта";
        setIsCount(true)
       
       }

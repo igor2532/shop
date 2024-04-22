@@ -29,24 +29,74 @@ span.countClass {
   font-size: 20px;
 }
 
-.App_categories {
-  display: flex;
-  justify-content: space-evenly;
-  padding-top: 20px;
-  padding-bottom: 48px;
-}
+
 
 
 @media all and (min-width:1300px){
+
+  .App_order_form div input {
+    width: 350px;
+    height: 35px;
+    padding-left: 11px;
+}
+
+  .cart { position: fixed;}
+  .App_search input {
+    height: 33px;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 303px;
+  }
+  div#root {
+    display: grid;
+    grid-template-columns: 74% 26%;
+     
+    margin: 0 auto;
+    padding-top: 30px;
+  }
+
   .App_items {
     display: grid;
     grid-template-columns: 20% 20% 20% 20%;
     grid-gap: 20px;
     justify-content: center;
-  }}
+  }
+
+  .App_categories {
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 20px;
+    padding-bottom: 48px;
+  }
+
+  .App_order_form_btn button {
+   
+    width: 263px;}
+
+}
 
 
 @media all and (max-width:1299px){
+
+  .App_order_form_btn button {
+   
+    width: 80%;}
+
+  .App_order_form div input {
+    width: 80%;
+    height: 35px;
+    padding-left: 11px;
+}
+  .cart {
+    position: relative;}
+  .App_search input {
+    height: 33px;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 80%;
+    margin-top:30px ;
+  }
+
   .App_items {
     /* display: flex;
     flex-direction: row-reverse;
@@ -59,12 +109,50 @@ span.countClass {
 }
 
 @media all and (max-width:999px){
+
+
+
+
+  
   .App_items {
   display: flex;
     flex-direction: row-reverse;
     flex-wrap: wrap;
     grid-gap: 20px;
 }
+
+
+
+div#root {
+  display: block;
+
+}
+.App_categories {
+  display: block;
+  text-align: center;
+}
+
+.App_categories>div {
+  margin-top: 20px;
+}
+
+.App_search input {
+  width: 80%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
 
 .Cart_items_item {
@@ -120,7 +208,7 @@ ul.pagination_ul li {
 }
 
 .cart {
-  position: fixed;
+  
   width: -webkit-fill-available;
   margin-right: 13px;
 }
@@ -128,5 +216,84 @@ ul.pagination_ul li {
 .Cart_items_item a {
   color: #123552;
   text-decoration: none;
+  font-weight: bold;
+}
+
+
+.App_order_form div {
+  margin-top: 16px;
+  text-align: center;
+}
+
+span.App_order_title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.App_order_form_btn button {
+  height: 40px;
+    background: #4ba921;
+  color: white;
+  border: none;
+  border-radius: 11px;
+  font-weight: bold;
+  font-size: 19px;
+}
+
+
+
+.App_testimonials {
+  text-align: center;
+  padding-top: 40px;
+  padding-bottom: 60px;
+}
+
+.App_testimonials_title span {
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.App_testimonials_title {
+  padding-bottom: 20px;
+}
+
+.App_testimonials_items {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+.App_testimonials_item {
+  padding: 16px;
+  border: solid 1px #91e179;
+}
+.App_testimonials_item_user {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.App_testimonials_item_user span {
+  background: red;
+  color: white;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-bottom: 2px;
+  padding-top: 2px;
+}
+
+.App_testimonials_item_title {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  font-weight: bold;
+}
+
+.App_testimonials_item_date span {
+  background: green;
+  color: white;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-top: 2px;
+  padding-bottom: 2px;
   font-weight: bold;
 }

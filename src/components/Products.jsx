@@ -1,7 +1,8 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import ProductContext from '../Context/ProductContext'
 import Product from './product'
 import ReactPaginate from 'react-paginate'
+import Testimonials from './Testimonials/Testimonials'
 
 export default function Products() {
 
@@ -12,6 +13,10 @@ export default function Products() {
         const newArr =  productsDef.filter(item => item.title.toUpperCase().includes(inputValue.toUpperCase()));
         setProducts([...newArr])
     }
+    useEffect(() => {
+        document.title = "Список продуктов";
+      }, []);
+  
   return (
 
     <>
@@ -19,6 +24,7 @@ export default function Products() {
        <input defaultValue={''} onChange={(e)=>searchProductForInput(e)} placeholder='Введите название товара' />
     </div>
  <PaginatedItems itemsPerPage={12} products={products} />   
+   <Testimonials />
  </>
   )
 }
