@@ -3,7 +3,7 @@ import ProductContext from "../Context/ProductContext";
 import { NavLink } from "react-router-dom";
 
 function Categories() {
-  const { productsDef, categories, products, setProducts } =
+  const { productsDef, categories, products, setProducts ,devUrl} =
     useContext(ProductContext);
   const newProducts = productsDef.map((item, itemKey) => ({
     ...item,
@@ -11,7 +11,7 @@ function Categories() {
   }));
   return (
     <div className="App_categories">
-      <NavLink to="/">
+      <NavLink to={`${devUrl}/`}>
         <button
           onClick={() => setProducts(newProducts)}
           className="btnCategory"
@@ -21,7 +21,7 @@ function Categories() {
       </NavLink>
       {categories.map((item, key) => (
         <div key={key}>
-          <NavLink to="/">
+          <NavLink to={`${devUrl}/`}>
           
             <button
               onClick={() =>
