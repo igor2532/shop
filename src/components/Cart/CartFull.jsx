@@ -3,6 +3,9 @@ import { NavLink, useNavigate } from 'react-router-dom'
 import ProductContext from '../../Context/ProductContext'
 import CartFullItem from './CartFullItem'
 
+
+
+
 function CartFull() {
 
 
@@ -23,6 +26,9 @@ function CartFull() {
           Очистить корзину
         </button>
       </div>
+
+ 
+
    </div>      
     )
 }

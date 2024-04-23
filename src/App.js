@@ -1,15 +1,19 @@
 import './App.css';
-import {useState } from 'react';
 import Arr from './data';
 import { BrowserRouter} from 'react-router-dom';
 import ProductContext from './Context/ProductContext';
 import Right from './components/Right/Right';
 import Left from './components/Left/Left';
+import { useState } from 'react';
+import { Provider} from 'react-redux';
+import store from './store';
+
 
 
 
 function App() {
  
+
   const devUrl = `${process.env.PUBLIC_URL}`
   // const devUrl = ``
   const [likes, setLikes] = useState(Arr.likes)
@@ -90,7 +94,7 @@ function App() {
            { user: nameValue, title: textValue, idProduct: params.id, likes: 0,date:new Date().toISOString().split('T')[0], time:new Date().toISOString().split('T')[1]  },
          ]);
          setTextValue('')
-         setNameValue('aaaa')
+         setNameValue('')
        }
      };
 
@@ -101,7 +105,7 @@ function App() {
 
 
   const ProductsObjectContext = {
-    
+   
   
     //for Categories
     productsDef: Arr.products, categories: categories, products: products, setProducts: setProducts,newProducts:newProducts,
@@ -126,13 +130,19 @@ function App() {
 
   return (
     <>
+
+
+       <Provider store={store}>
       <ProductContext.Provider value={ProductsObjectContext}>
         <BrowserRouter>
           <Left />
           <Right />
         </BrowserRouter>
       </ProductContext.Provider>
+       </Provider>
     </>
+
+
 
   );
 }
