@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
 import CartMini from "../Cart/CartMini";
-import FormOrder from "../FormOrder";
 import ProductContext from "../../Context/ProductContext";
 
 export default function Right() {
@@ -24,7 +23,7 @@ export default function Right() {
         </div> </div>
       )}
 
-      {cartproducts.length > 0 && isViewForm === true && <FormOrder />}
+ 
     </div>
   );
 }

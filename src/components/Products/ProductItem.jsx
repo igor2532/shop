@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useMemo, useState } from 'react'
 import { useParams } from "react-router-dom";
-import ProductContext from '../Context/ProductContext';
+import ProductContext from '../../Context/ProductContext';
+
 
 
 
@@ -48,7 +49,7 @@ function ProductItem() {
       {arrProduct.length > 0 &&
         arrProduct.map((item, key) => (
 
-          <div className='App_item'>
+          <div key={key} className='App_item'>
             
 
 

@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { NavLink } from 'react-router-dom';
-import ProductContext from '../Context/ProductContext';
+import ProductContext from '../../Context/ProductContext';
 
 export default function Product({product}) {
 

@@ -1,8 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react'
-import ProductContext from '../Context/ProductContext'
 import Product from './product'
 import ReactPaginate from 'react-paginate'
-import Testimonials from './Testimonials/Testimonials'
+import ProductContext from '../../Context/ProductContext'
+import Testimonials from '../Testimonials/Testimonials'
 
 export default function Products() {
 
@@ -45,15 +45,13 @@ function PaginatedItems({ itemsPerPage,products }) {
  
     const [itemOffset, setItemOffset] = useState(0);
     const endOffset = itemOffset + itemsPerPage;
-    console.log(`Loading items from ${itemOffset} to ${endOffset}`);
+  
     const currentItems = products.slice(itemOffset, endOffset);
     const pageCount = Math.ceil(products.length / itemsPerPage);
   
     const handlePageClick = (event) => {
       const newOffset = (event.selected * itemsPerPage) % products.length;
-      console.log(
-        `User requested page number ${event.selected}, which is offset ${newOffset}`
-      );
+      
       setItemOffset(newOffset);
     };
   
